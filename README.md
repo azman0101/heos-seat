@@ -1,3 +1,5 @@
+<p align="center"><img src="custom_components/heos_seat/brand/logo.png" alt="HEOS Seat" width="200"></p>
+
 # HEOS Seat
 
 Intégration Home Assistant qui recentre le son d'une barre de son **Denon HEOS** sur la place occupée,
@@ -18,6 +20,8 @@ Elle baisse l'enceinte arrière la plus proche et monte l'autre (`Surround G` / 
 **HACS** : ajouter ce dépôt comme dépôt personnalisé (catégorie « Integration »), installer « HEOS Seat », redémarrer.
 
 **Manuelle** : copier `custom_components/heos_seat` dans `/config/custom_components/`, redémarrer.
+
+Le logo de l'intégration (`custom_components/heos_seat/brand/`) s'affiche à partir de Home Assistant 2026.3.
 
 Puis *Paramètres → Appareils et services → Ajouter une intégration → HEOS Seat* : IP de la barre et entité radar.
 
