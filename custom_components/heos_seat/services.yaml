@@ -1,0 +1,41 @@
+save_spot:
+  fields:
+    name:
+      required: true
+      example: left
+      selector:
+        text:
+    left_db:
+      selector:
+        number: { min: -12, max: 12, step: 1, mode: box }
+    right_db:
+      selector:
+        number: { min: -12, max: 12, step: 1, mode: box }
+set_spot_levels:
+  fields:
+    name:
+      required: true
+      selector:
+        text:
+    left_db:
+      required: true
+      selector:
+        number: { min: -12, max: 12, step: 1, mode: box }
+    right_db:
+      required: true
+      selector:
+        number: { min: -12, max: 12, step: 1, mode: box }
+remove_spot:
+  fields:
+    name:
+      required: true
+      selector:
+        text:
+clear_calibration:
+set_enabled:
+  fields:
+    enabled:
+      required: true
+      selector:
+        boolean:
+status:

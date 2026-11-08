@@ -1,0 +1,109 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "HEOS Seat",
+        "data": {
+          "host": "IP de la barre de son",
+          "tracker": "Entité radar avec `targets` (aqara_fp400)"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "La barre ne répond pas sur le port 60006"
+    },
+    "abort": {
+      "single_instance_allowed": "Déjà configuré"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "data": {
+          "tracker": "Entité radar avec `targets` (aqara_fp400)"
+        }
+      }
+    }
+  },
+  "entity": {
+    "switch": {
+      "centering": {
+        "name": "Centrage du son"
+      }
+    },
+    "sensor": {
+      "left_offset": {
+        "name": "Décalage Surround G"
+      },
+      "right_offset": {
+        "name": "Décalage Surround D"
+      }
+    }
+  },
+  "services": {
+    "save_spot": {
+      "name": "Enregistrer une position",
+      "description": "Relève la position de la seule personne vue par le radar.",
+      "fields": {
+        "name": {
+          "name": "Position",
+          "description": "Nom de la position (left, center et right ont des niveaux par défaut)"
+        },
+        "left_db": {
+          "name": "Surround G (dB)",
+          "description": "Décalage de l'arrière G à cette position"
+        },
+        "right_db": {
+          "name": "Surround D (dB)",
+          "description": "Décalage de l'arrière D à cette position"
+        }
+      }
+    },
+    "set_spot_levels": {
+      "name": "Régler une position",
+      "description": "Change les niveaux des arrières d'une position enregistrée.",
+      "fields": {
+        "name": {
+          "name": "Position",
+          "description": "Nom de la position (left, center et right ont des niveaux par défaut)"
+        },
+        "left_db": {
+          "name": "Surround G (dB)",
+          "description": "Décalage de l'arrière G à cette position"
+        },
+        "right_db": {
+          "name": "Surround D (dB)",
+          "description": "Décalage de l'arrière D à cette position"
+        }
+      }
+    },
+    "remove_spot": {
+      "name": "Supprimer une position",
+      "description": "Oublie une position enregistrée.",
+      "fields": {
+        "name": {
+          "name": "Position",
+          "description": "Nom de la position (left, center et right ont des niveaux par défaut)"
+        }
+      }
+    },
+    "clear_calibration": {
+      "name": "Effacer le calibrage",
+      "description": "Oublie toutes les positions enregistrées."
+    },
+    "set_enabled": {
+      "name": "Activer le centrage",
+      "description": "Démarre ou arrête le suivi de la position.",
+      "fields": {
+        "enabled": {
+          "name": "Actif",
+          "description": "Marche ou arrêt"
+        }
+      }
+    },
+    "status": {
+      "name": "État",
+      "description": "Positions enregistrées, cibles du radar et décalages appliqués."
+    }
+  }
+}

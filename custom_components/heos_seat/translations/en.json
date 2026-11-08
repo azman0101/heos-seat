@@ -1,0 +1,109 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "HEOS Seat",
+        "data": {
+          "host": "Sound bar IP",
+          "tracker": "Radar entity with `targets` (aqara_fp400)"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "The sound bar does not answer on port 60006"
+    },
+    "abort": {
+      "single_instance_allowed": "Already configured"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "data": {
+          "tracker": "Radar entity with `targets` (aqara_fp400)"
+        }
+      }
+    }
+  },
+  "entity": {
+    "switch": {
+      "centering": {
+        "name": "Sound centering"
+      }
+    },
+    "sensor": {
+      "left_offset": {
+        "name": "Rear left offset"
+      },
+      "right_offset": {
+        "name": "Rear right offset"
+      }
+    }
+  },
+  "services": {
+    "save_spot": {
+      "name": "Save a position",
+      "description": "Record the position of the single person seen by the radar.",
+      "fields": {
+        "name": {
+          "name": "Position",
+          "description": "Name of the position (left, center and right have default levels)"
+        },
+        "left_db": {
+          "name": "Rear left (dB)",
+          "description": "Offset of the rear left speaker at this position"
+        },
+        "right_db": {
+          "name": "Rear right (dB)",
+          "description": "Offset of the rear right speaker at this position"
+        }
+      }
+    },
+    "set_spot_levels": {
+      "name": "Set position levels",
+      "description": "Change the rear levels of a saved position.",
+      "fields": {
+        "name": {
+          "name": "Position",
+          "description": "Name of the position (left, center and right have default levels)"
+        },
+        "left_db": {
+          "name": "Rear left (dB)",
+          "description": "Offset of the rear left speaker at this position"
+        },
+        "right_db": {
+          "name": "Rear right (dB)",
+          "description": "Offset of the rear right speaker at this position"
+        }
+      }
+    },
+    "remove_spot": {
+      "name": "Remove a position",
+      "description": "Forget one saved position.",
+      "fields": {
+        "name": {
+          "name": "Position",
+          "description": "Name of the position (left, center and right have default levels)"
+        }
+      }
+    },
+    "clear_calibration": {
+      "name": "Clear calibration",
+      "description": "Forget all saved positions."
+    },
+    "set_enabled": {
+      "name": "Enable centering",
+      "description": "Start or stop following the position.",
+      "fields": {
+        "enabled": {
+          "name": "Enabled",
+          "description": "On or off"
+        }
+      }
+    },
+    "status": {
+      "name": "Status",
+      "description": "Saved positions, radar targets and applied offsets."
+    }
+  }
+}
